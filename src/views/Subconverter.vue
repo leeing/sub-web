@@ -3,9 +3,6 @@
     <el-row style="margin-top: 10px">
       <el-col>
         <el-card>
-          <div slot="header">
-            定阅地址转换服务
-          </div>
           <el-container>
             <el-form :model="form" label-width="80px" label-position="left" style="width: 100%">
               <el-form-item label="模式设置:">
@@ -33,7 +30,7 @@
                     style="width: 100%"
                     v-model="form.customBackend"
                     :fetch-suggestions="backendSearch"
-                    placeholder="默认由本站提供后端服务：http://moss.qadmleee.com/sub?"
+                    placeholder="默认由本站提供后端服务：https://moss.qadmleee.com/sub?"
                   >
                     <el-button slot="append" @click="gotoGayhub" icon="el-icon-link">前往项目仓库</el-button>
                   </el-autocomplete>
@@ -154,7 +151,7 @@
                   @click="makeShortUrl"
                   :loading="loading"
                   :disabled="customSubUrl.length === 0"
-                >生成短链接</el-button>
+                >生成短链接[未上线]</el-button>
                 <!-- <el-button style="width: 120px" type="primary" @click="surgeInstall" icon="el-icon-connection">一键导入Surge</el-button> -->
               </el-form-item>
 
@@ -241,7 +238,7 @@ export default {
           Surge4: "surge&ver=4",
           QuantumultX: "quanx"
         },
-        backendOptions: [{ value: "http://moss.qadmlee.com/sub?" }],
+        backendOptions: [{ value: "https://moss.qadmlee.com/sub?" }],
         remoteConfig: [
           {
             label: "定制化配置",
@@ -472,7 +469,7 @@ export default {
         message: h(
           "i",
           { style: "color: teal" },
-          "各种订阅链接生成由纯前端实现，默认本站提供后端转换及短地址服务，无隐私问题。"
+          "各种订阅链接生成由纯前端实现，默认本站提供后端转换服务，无隐私问题。"
         )
       });
     },
