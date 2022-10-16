@@ -4,10 +4,7 @@
       <el-col>
         <el-card>
           <div slot="header">
-            Subscription Converter
-            <svg-icon icon-class="github" style="margin-left: 20px" @click="goToProject" />
-
-            <div style="display: inline-block; position:absolute; right: 20px">{{ backendVersion }}</div>
+            定阅地址转换服务
           </div>
           <el-container>
             <el-form :model="form" label-width="80px" label-position="left" style="width: 100%">
@@ -36,7 +33,7 @@
                     style="width: 100%"
                     v-model="form.customBackend"
                     :fetch-suggestions="backendSearch"
-                    placeholder="动动小手，（建议）自行搭建后端服务。例：http://127.0.0.1:25500/sub?"
+                    placeholder="默认由本站提供后端服务：http://moss.qadmleee.com/sub?"
                   >
                     <el-button slot="append" @click="gotoGayhub" icon="el-icon-link">前往项目仓库</el-button>
                   </el-autocomplete>
@@ -241,89 +238,18 @@ export default {
       options: {
         clientTypes: {
           Clash: "clash",
-          Surge3: "surge&ver=3",
           Surge4: "surge&ver=4",
-          Quantumult: "quan",
-          QuantumultX: "quanx",
-          Surfboard: "surfboard",
-          Loon: "loon",
-          SSAndroid: "sssub",
-          V2Ray: "v2ray",
-          ss: "ss",
-          ssr: "ssr",
-          ssd: "ssd",
-          ClashR: "clashr",
-          Surge2: "surge&ver=2",
+          QuantumultX: "quanx"
         },
-        backendOptions: [{ value: "http://127.0.0.1:25500/sub?" }],
+        backendOptions: [{ value: "http://moss.qadmlee.com/sub?" }],
         remoteConfig: [
           {
-            label: "universal",
+            label: "定制化配置",
             options: [
               {
-                label: "No-Urltest",
+                label: "ACL4SSR_Online_Full_Lee",
                 value:
-                  "https://cdn.jsdelivr.net/gh/SleepyHeeead/subconverter-config@master/remote-config/universal/no-urltest.ini"
-              },
-              {
-                label: "Urltest",
-                value:
-                  "https://cdn.jsdelivr.net/gh/SleepyHeeead/subconverter-config@master/remote-config/universal/urltest.ini"
-              }
-            ]
-          },
-          {
-            label: "customized",
-            options: [
-              {
-                label: "Maying",
-                value:
-                  "https://cdn.jsdelivr.net/gh/SleepyHeeead/subconverter-config@master/remote-config/customized/maying.ini"
-              },
-              {
-                label: "Ytoo",
-                value:
-                  "https://cdn.jsdelivr.net/gh/SleepyHeeead/subconverter-config@master/remote-config/customized/ytoo.ini"
-              },
-              {
-                label: "FlowerCloud",
-                value:
-                  "https://cdn.jsdelivr.net/gh/SleepyHeeead/subconverter-config@master/remote-config/customized/flowercloud.ini"
-              },
-              {
-                label: "Nexitally",
-                value:
-                  "https://cdn.jsdelivr.net/gh/SleepyHeeead/subconverter-config@master/remote-config/customized/nexitally.ini"
-              },
-              {
-                label: "SoCloud",
-                value:
-                  "https://cdn.jsdelivr.net/gh/SleepyHeeead/subconverter-config@master/remote-config/customized/socloud.ini"
-              },
-              {
-                label: "ARK",
-                value:
-                  "https://cdn.jsdelivr.net/gh/SleepyHeeead/subconverter-config@master/remote-config/customized/ark.ini"
-              },
-              {
-                label: "ssrCloud",
-                value:
-                  "https://cdn.jsdelivr.net/gh/SleepyHeeead/subconverter-config@master/remote-config/customized/ssrcloud.ini"
-              }
-            ]
-          },
-          {
-            label: "Special",
-            options: [
-              {
-                label: "NeteaseUnblock(仅规则，No-Urltest)",
-                value:
-                  "https://cdn.jsdelivr.net/gh/SleepyHeeead/subconverter-config@master/remote-config/special/netease.ini"
-              },
-              {
-                label: "Basic(仅GEOIP CN + Final)",
-                value:
-                  "https://cdn.jsdelivr.net/gh/SleepyHeeead/subconverter-config@master/remote-config/special/basic.ini"
+                  "https://raw.githubusercontent.com/leeing/ACL4SSR/master/Clash/config/ACL4SSR_Online_Full_Lee.ini"
               }
             ]
           }
@@ -546,7 +472,7 @@ export default {
         message: h(
           "i",
           { style: "color: teal" },
-          "各种订阅链接（短链接服务除外）生成纯前端实现，无隐私问题。默认提供后端转换服务，隐私担忧者请自行搭建后端服务。"
+          "各种订阅链接生成由纯前端实现，默认本站提供后端转换及短地址服务，无隐私问题。"
         )
       });
     },
@@ -571,7 +497,7 @@ export default {
         .then(res => {
           if (res.data.code === 0 && res.data.data.url !== "") {
             this.$message.success(
-              "远程配置上传成功，配置链接已复制到剪贴板，有效期三个月望知悉"
+              "远程配置上传成功，配置链接已复制到剪贴板，有效期三个月。"
             );
 
             // 自动填充至『表单-远程配置』
