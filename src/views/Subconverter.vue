@@ -151,7 +151,7 @@
                   @click="makeShortUrl"
                   :loading="loading"
                   :disabled="customSubUrl.length === 0"
-                >生成短链接[未上线]</el-button>
+                >生成短链接[下线]</el-button>
                 <!-- <el-button style="width: 120px" type="primary" @click="surgeInstall" icon="el-icon-connection">一键导入Surge</el-button> -->
               </el-form-item>
 
@@ -247,6 +247,11 @@ export default {
                 label: "ACL4SSR_Online_Full_Lee",
                 value:
                   "https://raw.githubusercontent.com/leeing/ACL4SSR/master/Clash/config/ACL4SSR_Online_Full_Lee.ini"
+              },
+              {
+                label: "ACL4SSR_Online_Full_USTW",
+                value:
+                  "https://raw.githubusercontent.com/leeing/ACL4SSR/master/Clash/config/ACL4SSR_Online_Full_USTW.ini"
               }
             ]
           }
@@ -266,7 +271,7 @@ export default {
         sort: false,
         udp: false,
         tfo: false,
-        scv: true,
+        scv: false,
         fdn: false,
         appendType: false,
         insert: false, // 是否插入默认订阅的节点，对应配置项 insert_url
