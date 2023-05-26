@@ -308,6 +308,11 @@ export default {
                 label: "ACL4SSR_Online_Full_Liq",
                 value:
                   "https://raw.githubusercontent.com/leeing/ACL4SSR/master/Clash/config/ACL4SSR_Online_Full_Liq.ini"
+              },
+              {
+                label: "ACL4SSR_Online_Full_Custom",
+                value:
+                  "https://raw.githubusercontent.com/leeing/ACL4SSR/master/Clash/config/ACL4SSR_Online_Full_Liq.ini"
               }
             ]
           }
