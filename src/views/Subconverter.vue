@@ -252,6 +252,21 @@ export default {
                 label: "ACL4SSR_Online_Full_USTW",
                 value:
                   "https://raw.githubusercontent.com/leeing/ACL4SSR/master/Clash/config/ACL4SSR_Online_Full_USTW.ini"
+              },
+              {
+                label: "ACL4SSR_Online_Full_USHKTW",
+                value:
+                  "https://raw.githubusercontent.com/leeing/ACL4SSR/master/Clash/config/ACL4SSR_Online_Full_USHKTW.ini"
+              },
+              {
+                label: "ACL4SSR_Online_Full_Qin",
+                value:
+                  "https://raw.githubusercontent.com/leeing/ACL4SSR/master/Clash/config/ACL4SSR_Online_Full_Qin.ini"
+              },
+              {
+                label: "ACL4SSR_Online_Full_Liq",
+                value:
+                  "https://raw.githubusercontent.com/leeing/ACL4SSR/master/Clash/config/ACL4SSR_Online_Full_Liq.ini"
               }
             ]
           }
